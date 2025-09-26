@@ -90,8 +90,6 @@ export default function ItemList() {
   ];
 
   return (
-    <section>
-    <p>Hello</p>
     <ul className="space-y-2 p-3 mr-20">
       {items.map((item, index) => (
         <Item
@@ -102,6 +100,5 @@ export default function ItemList() {
         />
       ))}
     </ul>
-    </section>
   );
 }
