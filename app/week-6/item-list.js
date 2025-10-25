@@ -1,52 +1,47 @@
 "use client";
- 
+
 import { useState } from "react";
 import Item from "./item";
-import itemsData from "./items.json";
- 
+import itemsData from "./items.json"; 
+
 export default function ItemList() {
   const [sortBy, setSortBy] = useState("name");
- 
- 
+
   const sortedItems = [...itemsData].sort((a, b) => {
-    if (sortBy === "name") {
-      return a.name.localeCompare(b.name);
-    } else if (sortBy === "category") {
-      return a.category.localeCompare(b.category);
-    }
+    if (sortBy === "name") return a.name.localeCompare(b.name);
+    if (sortBy === "category") return a.category.localeCompare(b.category);
+    return 0;
   });
- 
+
   return (
-    <div className="p-3">
-   
-      <div className="flex items-center space-x-3 mb-4">
-        <span className="text-gray-500 font-medium">Sort by:</span>
- 
+    <div className="w-full max-w-2xl flex flex-col items-center">
+      {/* Sort buttons */}
+      <div className="flex justify-center items-center gap-3 mb-5">
+        <span className="font-medium text-gray-600">Sort by:</span>
         <button
           onClick={() => setSortBy("name")}
           className={`px-4 py-1 rounded ${
             sortBy === "name"
               ? "bg-blue-600 text-white"
-              : "bg-white border text-gray-800 hover:bg-gray-100"
+              : "bg-gray-100 text-gray-700 hover:bg-gray-200"
           }`}
         >
           Name
         </button>
- 
         <button
           onClick={() => setSortBy("category")}
           className={`px-4 py-1 rounded ${
             sortBy === "category"
               ? "bg-blue-600 text-white"
-              : "bg-white border text-gray-800 hover:bg-gray-100"
+              : "bg-gray-100 text-gray-700 hover:bg-gray-200"
           }`}
         >
           Category
         </button>
       </div>
- 
-   
-      <ul className="space-y-2 p-3 mr-20">
+
+      {/* Item list */}
+      <ul className="w-full flex flex-col gap-3">
         {sortedItems.map((item) => (
           <Item
             key={item.id}
