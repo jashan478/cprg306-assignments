@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useUserAuth } from "../../contexts/AuthContext";
+import { useUserAuth } from "../../contexts/AuthContexts";
 
 import ItemList from "./item-list";
 import MealIdeas from "./meal-ideas";
@@ -153,4 +153,5 @@ export default function Page() {
     </main>
   );
 }
+
 
