@@ -1,6 +1,6 @@
 "use client";
 
-import { useUserAuth } from "../contexts/AuthContext";
+import { useUserAuth } from "../contexts/AuthContexts";
 import Link from "next/link";
 
 export default function LoginPage() {
@@ -40,4 +40,5 @@ export default function LoginPage() {
     </main>
   );
 }
+
 
