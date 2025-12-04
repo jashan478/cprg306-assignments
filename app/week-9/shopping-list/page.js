@@ -3,7 +3,7 @@ import { useState } from "react";
 import ItemList from "./item-list";
 import itemsData from "./items.json";
 import MealIdeas from "./meal-ideas"; 
-import { useUserAuth } from "../../contexts/AuthContext";
+import { useUserAuth } from "../../contexts/AuthContexts";
 
 
 export default function Page() {
@@ -144,3 +144,4 @@ export default function Page() {
     </main>
   );
 }
+
